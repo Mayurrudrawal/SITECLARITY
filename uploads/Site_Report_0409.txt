@@ -1,0 +1,49 @@
+NH-XX HIGHWAY DEVELOPMENT PROJECT
+NATIONAL HIGHWAYS AUTHORITY
+CONTRACT PACKAGE: NH-XX/PKG-04 (KM 0+000 TO KM 45+000)
+CONTRACTOR: L&T CIVIL INFRASTRUCTURE JOINT VENTURE
+
+DAILY PROGRESS & SITE EXECUTION REPORT
+============================================================
+REPORT NUMBER: DPR-2026-09-04-001
+DATE: 04 September 2026
+WEATHER: Clear, Ambient Temp: 29°C
+SHIFT: General Day Shift (07:00 - 18:00 hrs)
+
+1. WORK LOCATION & CHAINAGE
+------------------------------------------------------------
+Section: Corridor North
+Zone: Zone A
+Chainage Range: Chainage 10+200 to Chainage 10+800
+
+2. EXECUTED ACTIVITY SUMMARY
+------------------------------------------------------------
+Activity: Earthwork Excavation (Roadway Cut & Embankment Foundation)
+Scheduled Activity Code: A101
+Executed Quantity: 1,200 cubic metres (1,200 m³)
+Haul Distance: Average 2.4 km to designated borrow-disposal pit at KM 12+800.
+Status: Completed and certified for the day.
+
+3. RESOURCE & EQUIPMENT MOBILIZATION
+------------------------------------------------------------
+- 4x Hydraulic Excavators (CAT 320D & Komatsu PC210)
+- 12x 16-Tonne Heavy Tippers
+- 1x Motor Grader CAT 120M (Leveling)
+- 1x Hamm 311 Soil Compactor (11-Tonne Vibratory Roller)
+- 2x Water Bowser (8,000 Litres each)
+- Manpower: 1 Foreman, 2 Surveyors, 18 Machine Operators/Flagmen
+
+4. QA/QC & COMPACTION TEST OBSERVATIONS
+------------------------------------------------------------
+Field Dry Density (FDD) achieved: 98.4% of Modified Proctor Density.
+Moisture content within ±1.5% of Optimum Moisture Content (OMC).
+Survey level check: Within +15mm / -10mm tolerance band.
+
+5. CERTIFICATION
+------------------------------------------------------------
+Certified by Contractor Site In-Charge:
+Er. M. K. Chidambaram, Project Manager
+
+Approved & Verified by Authority Engineer / Resident Engineer:
+Rajesh Sharma, Resident Engineer (Civil), Corridor North Section
+Date: 04-Sep-2026 17:45 hrs

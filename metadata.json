@@ -1,0 +1,6 @@
+{
+  "name": "SITE CLARITY",
+  "description": "AI-powered infrastructure project progress intelligence. Plan, capture, understand, match, measure, and verify execution against schedule.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
