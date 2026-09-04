@@ -4,8 +4,8 @@
  */
 
 export const UI_LANGUAGES = [
-  { code: 'hi', name: 'Hindi', nativeName: 'हिन्दी', direction: 'ltr' },
   { code: 'en', name: 'English', nativeName: 'English', direction: 'ltr' },
+  { code: 'hi', name: 'Hindi', nativeName: 'हिन्दी', direction: 'ltr' },
   { code: 'ta', name: 'Tamil', nativeName: 'தமிழ்', direction: 'ltr' },
   { code: 'mr', name: 'Marathi', nativeName: 'मराठी', direction: 'ltr' },
   { code: 'ur', name: 'Urdu', nativeName: 'اردو', direction: 'rtl' },

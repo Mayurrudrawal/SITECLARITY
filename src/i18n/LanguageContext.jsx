@@ -2,24 +2,24 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import { UI_LANGUAGES, translations } from './translations.js';
 
 const LanguageContext = createContext({
-  language: 'hi',
+  language: 'en',
   setLanguage: () => {},
   direction: 'ltr',
   t: (key, fallback) => fallback || key,
   languages: UI_LANGUAGES,
-  currentLanguageObj: UI_LANGUAGES[0]
+  currentLanguageObj: UI_LANGUAGES.find(l => l.code === 'en') || UI_LANGUAGES[0]
 });
 
 export function LanguageProvider({ children }) {
   const [language, setLanguageState] = useState(() => {
     try {
-      return localStorage.getItem('sc_ui_language') || 'hi';
+      return localStorage.getItem('sc_ui_language') || 'en';
     } catch {
-      return 'hi';
+      return 'en';
     }
   });
 
-  const currentLanguageObj = UI_LANGUAGES.find(l => l.code === language) || UI_LANGUAGES[0];
+  const currentLanguageObj = UI_LANGUAGES.find(l => l.code === language) || UI_LANGUAGES.find(l => l.code === 'en') || UI_LANGUAGES[0];
   const direction = currentLanguageObj.direction || 'ltr';
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export function LanguageProvider({ children }) {
 
   const setLanguage = (langCode) => {
     const target = UI_LANGUAGES.find(l => l.code === langCode);
-    const validCode = target ? target.code : 'hi';
+    const validCode = target ? target.code : 'en';
     setLanguageState(validCode);
     try {
       localStorage.setItem('sc_ui_language', validCode);

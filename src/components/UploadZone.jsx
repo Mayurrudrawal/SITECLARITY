@@ -17,7 +17,7 @@ import { createFieldReport } from '../services/api.js';
 
 export function UploadZone({ onUploadSuccess, id }) {
   const [activeTab, setActiveTab] = useState('text'); // 'text', 'structured', 'pdf', 'photo', 'voice'
-  const [selectedLanguage, setSelectedLanguage] = useState('hi');
+  const [selectedLanguage, setSelectedLanguage] = useState('en');
   const [detectedLangInfo, setDetectedLangInfo] = useState(null);
   const [textInput, setTextInput] = useState('');
   const [isUploading, setIsUploading] = useState(false);
