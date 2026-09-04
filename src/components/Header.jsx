@@ -24,6 +24,7 @@ export function Header({
   onSelectTab,
   onOpenCommandPalette,
   onLanguageChanged,
+  onGoToLanding,
   id
 }) {
   const { t } = useI18n();
@@ -83,6 +84,16 @@ export function Header({
             <span className="hidden sm:inline">{t('statusLabel', 'STATUS')}:</span>
             <span>{t('statusAtRisk', 'AT RISK')} ({variance}%)</span>
           </div>
+
+          {onGoToLanding && (
+            <button
+              onClick={onGoToLanding}
+              className="hidden xl:flex items-center space-x-1 text-[11px] font-mono text-[#617386] hover:text-[#16324F] px-2 py-1 rounded hover:bg-[#F5F7F9] border border-transparent hover:border-[#D8E1E8] transition-colors cursor-pointer"
+              title="Return to Product Landing Page"
+            >
+              <span>← Product Overview</span>
+            </button>
+          )}
         </div>
 
         {/* Right Action Tools */}

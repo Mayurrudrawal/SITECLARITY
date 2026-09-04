@@ -15,6 +15,7 @@ import { ProgressPage } from './pages/ProgressPage.jsx';
 import { DelaysPage } from './pages/DelaysPage.jsx';
 import { TraceabilityPage } from './pages/TraceabilityPage.jsx';
 import { MultilingualIntelligencePage } from './pages/MultilingualIntelligencePage.jsx';
+import { LandingPage } from './pages/LandingPage.jsx';
 
 import {
   fetchDashboard,
@@ -29,7 +30,17 @@ import {
   resetDemoState
 } from './services/api.js';
 
+function getInitialRoute() {
+  if (typeof window === 'undefined') return 'landing';
+  const path = window.location.pathname;
+  if (path === '/dashboard' || path.startsWith('/dashboard/')) {
+    return 'dashboard';
+  }
+  return 'landing';
+}
+
 export default function App() {
+  const [currentRoute, setCurrentRoute] = useState(getInitialRoute);
   const [activeTab, setActiveTab] = useState('dashboard');
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [dashboardData, setDashboardData] = useState(null);
@@ -71,6 +82,36 @@ export default function App() {
     window.addEventListener('keydown', handleGlobalKeyDown);
     return () => window.removeEventListener('keydown', handleGlobalKeyDown);
   }, []);
+
+  // Listen to browser Back/Forward navigation
+  useEffect(() => {
+    const handlePopState = () => {
+      const path = window.location.pathname;
+      if (path === '/dashboard' || path.startsWith('/dashboard/')) {
+        setCurrentRoute('dashboard');
+      } else {
+        setCurrentRoute('landing');
+      }
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  const handleOpenDashboard = () => {
+    if (window.location.pathname !== '/dashboard') {
+      window.history.pushState({}, '', '/dashboard');
+    }
+    setCurrentRoute('dashboard');
+    window.scrollTo(0, 0);
+  };
+
+  const handleGoToLanding = () => {
+    if (window.location.pathname !== '/') {
+      window.history.pushState({}, '', '/');
+    }
+    setCurrentRoute('landing');
+    window.scrollTo(0, 0);
+  };
 
   const showToast = (msg) => {
     setToastMessage(msg);
@@ -303,6 +344,10 @@ export default function App() {
   const scheduleCount = activities.length || 125;
   const variance = dashboardData?.metrics?.scheduleVariance ?? -9;
 
+  if (currentRoute === 'landing') {
+    return <LandingPage onOpenDashboard={handleOpenDashboard} />;
+  }
+
   return (
     <div className="min-h-screen bg-[#F5F7F9] text-[#17212B] flex flex-col font-sans selection:bg-[#087F8C] selection:text-white">
       {/* 1. TOP HEADER */}
@@ -322,6 +367,7 @@ export default function App() {
         }}
         onOpenCommandPalette={() => setIsCommandPaletteOpen(true)}
         onLanguageChanged={(code, nativeName) => showToast(`Interface language switched to ${nativeName} (${code.toUpperCase()})`)}
+        onGoToLanding={handleGoToLanding}
       />
 
       <div className="flex-1 flex">
